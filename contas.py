@@ -36,11 +36,13 @@ while True:
         valor = float(entrada.replace(',', '.'))
         tipo = input("tipo (sempre despesa): ")
         nome = input("Nome da despesa: ")
+        categoria = input("Categoria da despesa: ")
 
         nova_linha = {
             "valor": valor,
             "tipo": "despesa",
-            "nome": nome
+            "nome": nome,
+            "categoria_despesas": categoria
         }
 
         df = pd.concat([df, pd.DataFrame([nova_linha])], ignore_index=True)
@@ -54,11 +56,13 @@ while True:
         entrada = input("Valor do ganho: ") 
         valor = float(entrada.replace(',', '.'))
         nome = input("Fonte: ")
+        categoria = input("Categoria do ganho: ")
 
         nova_linha = {
             "valor": valor,
             "nome": nome,
-            "tipo": "ganho"
+            "tipo": "ganho",
+            "categoria_ganhos": categoria
         }
 
         df = pd.concat([df, pd.DataFrame([nova_linha])], ignore_index=True)
