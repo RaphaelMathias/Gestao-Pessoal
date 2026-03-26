@@ -73,8 +73,8 @@ while True:
     elif opcao == 3:
         print("---------- SALDO ----------")
         time.sleep(1)
-        total_despesas = df[df["tipo"]=="despesa"].groupby("valor").sum()
-        total_ganhos = df[df["tipo"]=="ganho"].groupby("valor").sum()
+        total_despesas = df_despesas["valor"].sum()
+        total_ganhos = df_ganhos["valor"].sum()
         saldo = total_ganhos - total_despesas
 
         print("\n ----- RESUMO FINANCEIRO -----")
